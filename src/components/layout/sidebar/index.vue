@@ -5,18 +5,38 @@
             <div class="music-menu music-online">
                 <div class="title">在线音乐</div>
                 <ul>
-                    <li class="active">音乐馆</li>
-                    <li>视频</li>
-                    <li>个性电台</li>
+                    <li class="active"><i class="fa fa-music"></i>音乐馆</li>
+                    <li><i class="fa fa-caret-square-o-left"></i>视频</li>
+                    <li><i class="fa fa-heartbeat"></i>个性电台</li>
                 </ul>
             </div>
             <div class="music-menu music-my">
-                <div class="title">在线音乐</div>
+                <div class="title">我的音乐</div>
                 <ul>
-                    <li>我喜欢</li>
-                    <li>本地和下载</li>
-                    <li>播放历史</li>
-                    <li>试听列表</li>
+                    <li><i class="fa fa-heart-o"></i>我喜欢</li>
+                    <li><i class="fa fa-tv"></i>本地和下载</li>
+                    <li><i class="fa fa-hourglass-o"></i>播放历史</li>
+                    <li><i class="fa fa-film"></i>试听列表</li>
+                </ul>
+            </div>
+            <div class="music-menu music-my">
+                <div class="title">我创建的歌单
+                    <span class="right-ico">
+                        <i class="fa fa-plus"></i><i class="fa fa-chevron-up"></i>
+                    </span>
+                </div>
+                <ul>
+                    <li>车载音乐</li>
+                </ul>
+            </div>
+            <div class="music-menu music-my">
+                <div class="title">我收藏的歌单
+                    <span class="right-ico">
+                        <i class="fa fa-chevron-up"></i>
+                    </span>
+                </div>
+                <ul>
+
                 </ul>
             </div>
         </div>
@@ -38,6 +58,7 @@
         width: 219px;
         background: #efefef;
         display: flex;
+        font-size: 14px;
     }
     .music-online{
 
@@ -46,20 +67,33 @@
         width: 100%;
         .title{
             color: @font-color-minor;
+            font-size: @font-size-small;
             padding: 8px 12px;
-            margin-bottom: 7px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .right-ico{
+                >i{margin: 0 3px;}
+            }
         }
         >ul{
             list-style: none;
             li{
                 padding: 8px 12px;
                 border-radius: 3px;
+                .fa{
+                    margin-right: 10px;
+                }
             }
         }
         .active{
             background: @color-primary;
             color: #fff;
         }
-
+    }
+    .music-menu::after{
+        content: '';
+        display: block;
+        margin-bottom: 15px;
     }
 </style>
