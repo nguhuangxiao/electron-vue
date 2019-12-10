@@ -1,8 +1,10 @@
 <template>
     <div id="wrapper" class="wrapper">
         <sidebar></sidebar>
-        <toolbar></toolbar>
-        <router-view></router-view>
+        <div class="ngu-container">
+            <toolbar></toolbar>
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
@@ -21,6 +23,9 @@
 <style>
     .wrapper{
         display: flex;
+    }
+    .ngu-container{
+        flex: 1;
     }
 </style>
 
