@@ -3,7 +3,6 @@
 import { app, protocol, BrowserWindow } from 'electron'
 import {
   createProtocol,
-  installVueDevtools
 } from 'vue-cli-plugin-electron-builder/lib'
 
 // 设置菜单
@@ -20,9 +19,9 @@ protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true
 function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({ width: 1200, height: 800, webPreferences: {
-    nodeIntegration: true
+    nodeIntegration: true,
+    webviewTag: true
   } })
-
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
@@ -30,8 +29,12 @@ function createWindow () {
   } else {
     createProtocol('app')
     // Load the index.html when not in development
-    win.loadURL('app://./index.html')
+    //win.loadURL('app://./index.html')
+    win.loadURL('http://localhost:8085')
   }
+
+  win.webContents.openDevTools()
+
   //设置菜单
   setMenu()
   win.on('closed', () => {
@@ -68,7 +71,7 @@ app.on('ready', async () => {
     // If you are not using Windows 10 dark mode, you may uncomment these lines
     // In addition, if the linked issue is closed, you can upgrade electron and uncomment these lines
      try {
-       await installVueDevtools()
+       //await installVueDevtools()
      } catch (e) {
        // eslint-disable-next-line no-console
        console.error('Vue Devtools failed to install:', e.toString())
