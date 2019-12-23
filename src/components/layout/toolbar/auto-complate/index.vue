@@ -94,6 +94,7 @@
             left: 0;
             display: flex;
             box-shadow: 0px 0px 5px #d9d9d9;
+            z-index: 3;
             >ul{
                 flex: 1;
                 list-style: none;

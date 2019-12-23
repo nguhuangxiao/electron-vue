@@ -22,7 +22,7 @@
             <div class="music-menu music-my">
                 <div class="title">我创建的歌单
                     <span class="right-ico">
-                        <i class="fa fa-plus"></i><i class="fa fa-chevron-up"></i>
+                        <i class="fa fa-plus"></i><i class="fa fa-angle-up"></i>
                     </span>
                 </div>
                 <ul>
@@ -32,7 +32,7 @@
             <div class="music-menu music-my">
                 <div class="title">我收藏的歌单
                     <span class="right-ico">
-                        <i class="fa fa-chevron-up"></i>
+                        <i class="fa fa fa-angle-up"></i>
                     </span>
                 </div>
                 <ul>
@@ -73,7 +73,7 @@
             justify-content: space-between;
             align-items: center;
             .right-ico{
-                >i{margin: 0 3px;}
+                >i{margin: 0 3px;font-size: 20px;}
             }
         }
         >ul{
